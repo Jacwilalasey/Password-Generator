@@ -103,7 +103,7 @@ const key_strings = {
 function generatePassword() {
     var passwordCharSet = "";
   
-    var length = window.prompt("Enter a number from 10 to 64 for password length.");
+    var length = window.prompt("Choose your password length between 10 and 64.");
 
     if (length >= 10 && length <= 64) {
         console.log("character lenght correct")

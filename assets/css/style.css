@@ -92,7 +92,7 @@ header {
   cursor: pointer;
 }
 
-.btn:hover {
+#generate:hover {
     border: none;
     background-color: #457b9d;
     border-radius: 25px;
