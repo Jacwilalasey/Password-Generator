@@ -3,7 +3,6 @@ var specialCharacters = [
     '@',
     '%',
     '+',
-    '\\',
     '/',
     "'",
     '!',
@@ -17,7 +16,6 @@ var specialCharacters = [
     '(',
     '}',
     '{',
-    ']',
     '[',
     '~',
     '-',
@@ -115,21 +113,18 @@ var specialCharacters = [
   console.log(generatePassword());
   
   //check password security level
-  function checkPassword() {
-    if (generatePassword.length < 10) {
-      alert('Password is too short!')
-    } else if (generatePassword.length > 64) {
-      alert('Password is too long!')
-    } else {
-      console.log('Password length acceptable')
-    }
+  function checkPassword(str) {
+      if (re = /^(?=.*\d)(?=.*[!@#$%^&*(){}[-_.~])(?=.*[a-z])(?=.*[A-Z]).{10,30}$/);
+      return re.test(str);
+
   }
+
+  console.log(checkPassword());
   
   
-  
-  // Get references to the #generate element
+  // Get references to the #generate & #copy element
   var generateBtn = document.querySelector('#generate');
-  
+
   // Write password to the #password input
   function writePassword() {
     var password = generatePassword();
@@ -137,6 +132,20 @@ var specialCharacters = [
   
     passwordText.value = password;
   }
+
+  // Get references to the #generate & #copy element
+  var copyBtn = document.querySelector('#copy');
+
+  // function for user to copy their new password
+  function copyPassword() {
+    var copyText = document.getElementById("#password");
+    copyText.select();
+    navigator.clipboard.writeText(copyText.value);
+    alert("Copied to clipboard")  
+  }
   
   // Add event listener to generate button
   generateBtn.addEventListener('click', writePassword);
+ 
+  // Add event listener to copy button
+  copyBtn.addEventListener('click', copyPassword);
