@@ -170,6 +170,9 @@ function generatePassword() {
 // Get references to the #generate & #copy element
   var copyBtn = document.querySelector('#copy');
 
+// Add event listener to copy button
+  copyBtn.addEventListener('click', copyPassword);
+
 // function for user to copy their new password
   function copyPassword() {
     var copyText = document.getElementById("#password");
@@ -179,7 +182,5 @@ function generatePassword() {
   }
   
 // Add event listener to generate button
-  generateBtn.addEventListener('click', writePassword);
+  generateBtn.addEventListener('click', copyPassword);
 
-// Add event listener to copy button
-  copyBtn.addEventListener('click', copyPassword);
