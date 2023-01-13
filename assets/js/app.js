@@ -24,9 +24,6 @@ function generatePassword() {
     if (lowercase == true) {
         console.log("Lowercase included")
       passwordCharSet += key_strings.lowercase;
-    } else {
-        window.alert('You password needs to contain lowercase characters to continue.');
-        script.stop;
     };
   
   
@@ -34,27 +31,18 @@ function generatePassword() {
     if (uppercase == true) {
         console.log("Uppercase included")
       passwordCharSet += key_strings.uppercase;
-    } else {
-        window.alert('You password needs to contain UPPERCASE characters to continue.');
-        script.stop;
     };
   
     var symbols = window.confirm("Would you like to use special characters?");
     if (symbols == true) {
         console.log("Special characters included")
       passwordCharSet += key_strings.symbol;
-    } else {
-        window.alert('You password needs to contain special characters to continue.');
-        script.stop;
     };
   
     var numbers = window.confirm("Would you like to use numbers?");
     if (numbers ==true) {
         console.log("Numbers included")
       passwordCharSet += key_strings.number;
-    } else {
-        window.alert('You password needs to contain numbers to continue.');
-        script.stop;
     };
 
     var password = "";
